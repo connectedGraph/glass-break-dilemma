@@ -1,0 +1,174 @@
+/* 原理页 */
+
+.about {
+  max-width: 66ch;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-top: 8px;
+}
+
+.about__head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about__title {
+  font-size: clamp(26px, 5vw, 38px);
+}
+
+.about__lede {
+  font-size: 14.5px;
+  color: var(--fg-dim);
+  line-height: 1.75;
+}
+
+.about__sec {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  column-gap: 14px;
+  row-gap: 6px;
+}
+
+.about__num {
+  font-size: 12px;
+  color: var(--fg-mute);
+  padding-top: 5px;
+  letter-spacing: 0.05em;
+}
+
+.about__h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  grid-column: 2;
+}
+
+.about__body {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--fg-dim);
+  line-height: 1.78;
+}
+
+.about__body b {
+  color: var(--fg);
+  font-weight: 650;
+}
+
+.about__body code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border);
+}
+
+.about__list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.about__list li::marker {
+  color: var(--fg-mute);
+}
+
+/* ── 公式 ─────────────────────────────────── */
+
+.formula {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.formula .is-red {
+  color: var(--red);
+}
+
+.formula .is-blue {
+  color: var(--blue);
+}
+
+/* ── 表格 ─────────────────────────────────── */
+
+.about__tablewrap {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.about__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.about__table th {
+  text-align: right;
+  padding: 9px 14px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.about__table th:first-child {
+  text-align: left;
+}
+
+.about__table td {
+  text-align: right;
+  padding: 7px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--fg-dim);
+}
+
+.about__table td:first-child {
+  text-align: left;
+  color: var(--fg);
+}
+
+.about__table tr:last-child td {
+  border-bottom: none;
+}
+
+.about__table td.is-red {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.about__table td.is-blue {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .about__sec {
+    grid-template-columns: 1fr;
+  }
+  .about__num {
+    display: none;
+  }
+  .about__h2,
+  .about__body {
+    grid-column: 1;
+  }
+}

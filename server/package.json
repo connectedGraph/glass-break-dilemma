@@ -1,0 +1,24 @@
+{
+  "name": "@gbd/server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server/src/main.js",
+    "test": "tsx --test test/*.test.ts",
+    "sim": "tsx src/cli/probe.ts",
+    "sweep": "tsx src/cli/sweep.ts",
+    "balance": "tsx src/cli/balance.ts"
+  },
+  "dependencies": {
+    "hono": "^4.10.2",
+    "@hono/node-server": "^1.19.5",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "@types/node": "^24.9.1"
+  }
+}

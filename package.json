@@ -1,0 +1,28 @@
+{
+  "name": "glass-break-dilemma",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "双屏对撞弹球：红 ×2、蓝 +15，单球下坠比较谁先破镜（TypeScript 全栈重制）",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w server & npm run dev -w client",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "typecheck": "tsc -p shared/tsconfig.json && tsc -p server/tsconfig.json --noEmit && tsc -p client/tsconfig.json --noEmit",
+    "test": "npm run test -w server",
+    "sim": "tsx server/src/cli/probe.ts",
+    "sweep": "bash server/src/cli/sweep.sh",
+    "balance": "tsx server/src/cli/balance.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
